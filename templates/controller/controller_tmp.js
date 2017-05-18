@@ -21,7 +21,9 @@ export default class extends Base {
     let assets = this.assets;
     this.assign({
       "commonJs": assets["common"]["js"], 
-      "pageJs": assets[http.controller]["js"]
+      "pageJs": assets[http.controller]["js"],
+      "pageCss": assets[http.controller]["css"],
+      "isDev": think.env === 'development' ? true : false
     });
     //auto render template file index_index.html
     return this.display();
