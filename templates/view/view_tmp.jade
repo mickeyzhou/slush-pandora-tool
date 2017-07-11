@@ -2,10 +2,9 @@ doctype html
 html
 	head
 		meta(charset="utf-8")
-		title <%= name%>工具
-		link(rel="stylesheet", href="#{isDev ? 'http://localhost:9000/assets' : '/static/dist'}/#{pageCss}")
+		title <%= name %>工具
+		link(rel="stylesheet", href="#{isDev ? 'http://localhost:9000/assets/css' : '/static/dist'}/#{pageCss}")
 	body
 		div#page
-		script(src="http://static.yidianzixun.com/modules/common/jquery-2.1.1.min.js")	
-		script(src="#{isDev ? 'http://localhost:9000/assets' : '/static/dist'}/#{commonJs}")
-		script(src="#{isDev ? 'http://localhost:9000/assets' : '/static/dist'}/#{pageJs}")
+		script(src="http://static.yidianzixun.com/modules/common/jquery-2.1.1.min.js")			
+		script(src="#{isDev ? 'http://localhost:9000/assets/js' : '/static/dist'}/#{pageJs}")

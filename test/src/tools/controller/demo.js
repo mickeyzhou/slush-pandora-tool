@@ -19,12 +19,11 @@ export default class extends Base {
   indexAction(){
     let http = this.http;
     let assets = this.assets;
-    let isDev = think.env === 'development';
-    let toolname = http.controller;
     this.assign({
-      'isDev': isDev,
-      "pageJs": isDev ? `${toolname}.js` : assets[toolname]["js"],
-      "pageCss": isDev ? `${toolname}.css` : assets[toolname]["css"]
+      "commonJs": assets["common"]["js"], 
+      "pageJs": assets[http.controller]["js"],
+      "pageCss": assets[http.controller]["css"],
+      "isDev": think.env === 'development' ? true : false
     });
     //auto render template file index_index.html
     return this.display();
